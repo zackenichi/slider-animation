@@ -8,7 +8,7 @@ const labelStyle = {
   textAlign: 'left',
 };
 
-const CampaignSettings = () => {
+const CampaignSettings = ({ demo }) => {
   return (
     <Card
       sx={{
@@ -31,7 +31,7 @@ const CampaignSettings = () => {
             </IconButton>
           </Grid>
           <Grid item xs={12}>
-            <AnimatedSlider minLabel="1 month" maxLabel="2 years" />
+            <AnimatedSlider minLabel="1 month" maxLabel="2 years" demo={demo} />
           </Grid>
           <Grid item xs={12}>
             <Typography sx={{ color: 'gray', fontWeight: 'bold' }}>

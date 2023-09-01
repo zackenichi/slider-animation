@@ -1,7 +1,7 @@
 import { Slider } from '@mui/material';
 import React, { useEffect } from 'react';
 
-const AnimatedSlider = ({ minLabel, maxLabel }) => {
+const AnimatedSlider = ({ minLabel, maxLabel, demo }) => {
   const [value, setValue] = React.useState(0);
   const targetValue = 50;
 
@@ -27,14 +27,16 @@ const AnimatedSlider = ({ minLabel, maxLabel }) => {
   //   }, [value]);
 
   useEffect(() => {
-    const animationTimeout = setTimeout(() => {
-      setValue(targetValue);
-    }, 100); // Adjust the delay as needed
+    if (demo) {
+      const animationTimeout = setTimeout(() => {
+        setValue(targetValue);
+      }, 100); // Adjust the delay as needed
 
-    return () => {
-      clearTimeout(animationTimeout);
-    };
-  }, []); // Empty dependency array to run this effect only once
+      return () => {
+        clearTimeout(animationTimeout);
+      };
+    }
+  }, [demo]); // Empty dependency array to run this effect only once
 
   return (
     <Slider
