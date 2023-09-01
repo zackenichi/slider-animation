@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import CampaignSettings from './CampaignSettings';
 
 function App() {
+  // This can be based on the user DB call where we can only load the
+  // slider animation for first time users
+  // and disable this once it has been shown
+  // by updating db
+
+  const firstDemo = true;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CampaignSettings demo={firstDemo} />
     </div>
   );
 }
